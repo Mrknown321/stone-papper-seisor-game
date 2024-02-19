@@ -73,16 +73,24 @@ const playgame = (userchoice) =>{
         userwin = true;
         if(userchoice = "stone" ){
             // seisor papper
-            userwin = compchoice === "papper" ? false : true;
+            if(compchoice === "papper"){
+                userwin = false;
+               }else {
+                userwin = true;
+               }
         }
          if (userchoice === "papper") {
-            userwin = compchoice ===  "seisor" ? false : true;
+            if(compchoice === "seisor"){
+                userwin = false;
+               }else {
+                userwin = true;
+               }
         }
         if(userchoice === "seisor"){
-           if(compchoice === "stone"){
-            userwin = false;
-           }else {
+           if(compchoice === "papper"){
             userwin = true;
+           }else {
+            userwin = false;
            }
         }
         showwinner(userwin);
